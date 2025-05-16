@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur javascript</h1>
+    <button id="Start">start</button>
+    <button id="Stop">Stop</button>
+    <button id="Reset">Reset</button>
+</body>
+<script>
+    const changeText = function(){
+        document.querySelector('h1').
+        innerHTML = "changed Text"
+    }
+
+    let set;
+
+    document.querySelector('#Start').
+    addEventListener('click', function(){
+        set = setTimeout(changeText, 2000)
+        console.log("timeout set")
+    })
+
+    document.querySelector('#Stop').
+    addEventListener('click', function(){
+        clearTimeout(set)
+        set = null
+        console.log("timeout is cleared");
+        
+    })
+
+    document.querySelector('#Reset').
+    addEventListener('click', function(){
+        document.querySelector('h1').
+        innerHTML = "Chai aur javascript"
+    })
+
+    
+</script>
+</html>
